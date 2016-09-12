@@ -14,12 +14,20 @@ import com.exercise.rccars.model.rcu.RemoteControlledUnit;
 
 /**
  * This class contains the parsing methods for the data input
- * 
- * @author gatan
  *
  */
 public class InputParser {
 
+	/**
+	 * Parses the given {@code String} extracting the {@link Position} data
+	 * 
+	 * @param positionString
+	 *            String containing the {@code Position} data. Expected format:
+	 *            X,Y
+	 * @return created {@code Position} with the given data
+	 * @throws IllegalArgumentException
+	 *             if the format of the given {@code String} is not as expected
+	 */
 	protected Position parsePosition(final String positionString) throws IllegalArgumentException {
 		final String[] coordinates = positionString.split("[\\s,]");
 		if (coordinates.length != 2) {
@@ -38,6 +46,16 @@ public class InputParser {
 		return new Position(posX, posY);
 	}
 
+	/**
+	 * Parses the given {@code String} extracting the {@link Commands} data
+	 * 
+	 * @param commandsString
+	 *            String containing a list of {@code Command}. Expected format:
+	 *            ABCD
+	 * @return created {@code Command} list with the given data
+	 * @throws UnknownCommandException
+	 *             if any of the given commands was not recognized
+	 */
 	protected List<Command> parseCommands(final String commandsString) throws UnknownCommandException {
 		final List<Command> commandsList = new ArrayList<Command>();
 
@@ -48,6 +66,22 @@ public class InputParser {
 		return commandsList;
 	}
 
+	/**
+	 * Parses the given {@code String} extracting the {@link Position} and
+	 * {@link Commands} data to generate a map with a newly created
+	 * {@link RemoteControlledUnit}
+	 * 
+	 * @param input
+	 *            String containing a list of {@code Command}. Expected format:
+	 *            X,Y:Commands
+	 * @return a {@code Map} with the keys of the newly created
+	 *         {@code RemoteControlledUnit} with given initial position and the
+	 *         {@code List} of assigned {@code Commands} as value
+	 * @throws UnknownCommandException
+	 *             if any of the given commands was not recognized
+	 * @throws IllegalArgumentException
+	 *             if the format of the given {@code String} is not as expected
+	 */
 	public Map<RemoteControlledUnit, List<Command>> parseInput(final String input)
 			throws UnknownCommandException, IllegalArgumentException {
 		final Map<RemoteControlledUnit, List<Command>> parsedInput = new HashMap<RemoteControlledUnit, List<Command>>();

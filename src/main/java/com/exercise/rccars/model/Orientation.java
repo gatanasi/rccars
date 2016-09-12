@@ -1,5 +1,12 @@
 package com.exercise.rccars.model;
 
+/**
+ * Orientations that can be used
+ * <li>{@link #NORTH}</li>
+ * <li>{@link #EAST}</li>
+ * <li>{@link #SOUTH}</li>
+ * <li>{@link #WEST}</li>
+ */
 public enum Orientation {
 	NORTH(0), EAST(1), SOUTH(2), WEST(3);
 

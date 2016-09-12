@@ -6,6 +6,9 @@ import com.exercise.rccars.model.Orientation;
 import com.exercise.rccars.model.Position;
 import com.exercise.rccars.model.Turn;
 
+/**
+ * This is a concrete class for a {@link RemoteControlledUnit}
+ */
 public class Car implements RemoteControlledUnit {
 
 	private Position position;

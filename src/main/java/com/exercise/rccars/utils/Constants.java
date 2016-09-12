@@ -4,8 +4,6 @@ import com.exercise.rccars.model.Position;
 
 /**
  * General Constants
- * 
- * @author gatan
  *
  */
 public class Constants {

@@ -1,5 +1,8 @@
 package com.exercise.rccars.model;
 
+/**
+ * This class represents the position in the grid
+ */
 public class Position {
 
 	private int x;

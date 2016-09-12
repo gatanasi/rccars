@@ -13,6 +13,10 @@ import com.exercise.rccars.model.Grid;
 import com.exercise.rccars.model.rcu.RemoteControlledUnit;
 import com.exercise.rccars.utils.InputParser;
 
+/**
+ * Main class that asks for input and processes the commands
+ * 
+ */
 public class App {
 	public static void main(String[] args) {
 		System.out
