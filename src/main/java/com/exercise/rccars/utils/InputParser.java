@@ -41,7 +41,7 @@ public class InputParser {
 	protected List<Command> parseCommands(final String commandsString) throws UnknownCommandException {
 		final List<Command> commandsList = new ArrayList<Command>();
 
-		for (String commandString : commandsString.split("")) {
+		for (final String commandString : commandsString.split("")) {
 			commandsList.add(CommandFactory.getCommand(commandString));
 		}
 
@@ -55,10 +55,10 @@ public class InputParser {
 		if (inputParts.length != 2) {
 			throw new IllegalArgumentException("Invalid input definition");
 		}
-		Position parsedPosition = parsePosition(inputParts[0]);
-		List<Command> parsedCommands = parseCommands(inputParts[1]);
+		final Position parsedPosition = parsePosition(inputParts[0]);
+		final List<Command> parsedCommands = parseCommands(inputParts[1]);
 
-		RemoteControlledUnit newCar = new Car();
+		final RemoteControlledUnit newCar = new Car();
 		newCar.setInitialPosition(parsedPosition);
 
 		parsedInput.put(newCar, parsedCommands);

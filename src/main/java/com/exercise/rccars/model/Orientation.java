@@ -11,12 +11,12 @@ public enum Orientation {
 
 	private static Orientation[] vals = new Orientation[4];
 	static {
-		for (Orientation o : Orientation.values())
-			vals[o.p] = o;
+		for (Orientation orientation : Orientation.values())
+			vals[orientation.p] = orientation;
 	}
 
-	public Orientation turnTo(final Turn t) {
-		return vals[(4 + this.p + (t == Turn.RIGHT ? 1 : -1)) % 4];
+	public Orientation turnTo(final Turn turn) {
+		return vals[(4 + this.p + (turn == Turn.RIGHT ? 1 : -1)) % 4];
 	}
 
 	public Position getUnitVector() {

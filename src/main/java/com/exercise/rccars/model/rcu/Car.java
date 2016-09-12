@@ -41,7 +41,7 @@ public class Car implements RemoteControlledUnit {
 
 	@Override
 	public void move() {
-		Position newPosition = position.addPosition(direction.getUnitVector());
+		final Position newPosition = position.addPosition(direction.getUnitVector());
 		if (grid.isInsideGrid(newPosition)) {
 			this.position = newPosition;
 		}

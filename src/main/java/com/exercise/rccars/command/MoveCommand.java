@@ -5,8 +5,8 @@ import com.exercise.rccars.model.rcu.RemoteControlledUnit;
 public class MoveCommand implements Command {
 
 	@Override
-	public void execute(final RemoteControlledUnit car) {
-		car.move();
+	public void execute(final RemoteControlledUnit rcUnit) {
+		rcUnit.move();
 	}
 
 	@Override
